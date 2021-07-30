@@ -1,0 +1,78 @@
+Create tabLe sector (
+	cod_sector INT PRIMARY KEY NOT NULL,
+	des_sector VARCHAR(60) NOT NULL
+);
+
+Create table zona(
+	cod_zona INT PRIMARY KEY NOT NULL,
+	cod_sector INT,
+	des_zona VARCHAR(80) NOT NULL,
+);
+
+CREATE TABLE persona (
+cod_persona INT PRIMARY KEY NOT NULL,
+nom_persona VARCHAR(80) NOT NULL,
+fec_nacimiento DATETIME NOT NULL,
+cod_sector INT,
+cod_zona INT,
+sueldo DECIMAL(5,2) NOT NULL,
+CONSTRAINT fk_cod_sector FOREIGN KEY (cod_sector) REFERENCES sector (cod_sector),
+CONSTRAINT fk_zona FOREIGN KEY (cod_zona) REFERENCES zona (cod_zona)
+);
+
+INSERT INTO sector (cod_sector,des_sector) 
+VALUES 
+('104', 'Sur'), 
+('105', 'Norte'),
+('106', 'Este'),
+('107', 'Oeste')
+
+
+ALTER TABLE zona ADD FOREIGN KEY (cod_sector) REFERENCES sector(cod_sector);
+
+INSERT INTO zona(cod_zona,cod_sector,des_zona) 
+VALUES 
+('10','105', 'Garzota'), 
+('20','105', 'Nueva Prosperina'),
+('30','104', 'Guasmo'),
+('40','104', 'Trinitaria'),
+('50','106', 'Coop 9 de octubre'), 
+('60','106', 'La joya'),
+('70','107', 'La puntilla'),
+('80','107', 'Via a la Costa')
+
+
+
+exec sp_rename 'Alumnos','persona';
+
+INSERT INTO persona VALUES ('0945','tomasso ciampa', '12/01/1949','106','50','690')
+
+
+ALTER TABLE persona ALTER COLUMN sueldo DECIMAL (6,2) NOT NULL;
+
+select * from persona;
+
+Select des_sector,des_zona , sueldo , fec_nacimiento, persona.nom_persona FROM  sector , zona , persona WHERE persona.cod_sector= sector.cod_sector
+AND persona.cod_zona= zona.cod_zona AND 
+DATEDIFF(YEAR,persona.fec_nacimiento,GETDATE())
+-(CASE
+   WHEN DATEADD(YY,DATEDIFF(YEAR,persona.fec_nacimiento,GETDATE()),fec_nacimiento)>GETDATE() THEN
+      1
+   ELSE
+      0 
+   END) > 65  
+order by sueldo
+
+
+
+
+Select DATEDIFF(YEAR,persona.fec_nacimiento,GETDATE())
+-(CASE
+   WHEN DATEADD(YY,DATEDIFF(YEAR,persona.fec_nacimiento,GETDATE()),fec_nacimiento)>GETDATE() THEN
+      1
+   ELSE
+      0 
+   END) as Edad , fec_nacimiento
+ from persona
+
+ 
