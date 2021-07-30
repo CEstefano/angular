@@ -1,0 +1,30 @@
+<HTML>
+ 
+ <P>
+ BACKEND Y FRONTEND terminados--- Faltan consultas    
+ 
+ 
+ back-end , en entity Core terminado.
+Modelo en angular terminado, :
+BASE DE DATOS: Comstruida con modelo code firts
+
+El front-Ent  Carga los Datos de la abase-y a los Combo Box,
+Botones eliminar-Nuevo-Volver-Comentados-por debugging.
+----<> 
+El front en Eimina datos de la base
+-----<>
+
+Faltantes
+      :
+      Cargar un combo box , dependiente de otro comboBox(SELECTS)
+      --- Directiva (CHANGE) - aun no me funciona
+      ----1: Debo obtener el Id de el Sector que seleccione(obtenido)
+      ----2: Decirle al otro cSELECT(Zonas) que llene los acmpos segun una comparacion de ids
+
+    INSERT
+    
+    En proceso
+     iNSERT Persona desde Front-end (problemas con el metodo)
+     
+     </P>
+        
