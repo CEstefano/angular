@@ -1,0 +1,251 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <div class="card card-son bg-info">
+        <div class="card-body">
+          <h1 class=" titulo "> <i class="fas fa-angle-right"></i> Personas <i class="fas fa-angle-left"></i></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container mt-2">
+
+  <!-- <div class="row mt-2"> -->
+
+    <div class="col-lg-8 offset-sm-2">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- (ngSubmit)="agregarPersona()" -->
+
+          <form [formGroup]="formulario"  (ngSubmit)="agregarPersona()">
+
+            <!-- Codigo Personal -->
+            <div class="row">
+              <!-- 1era label -->
+                  <div class="col-lg-3">
+
+                    <div class="input-group mb-3">
+                      <label  fclass="form-control">Cod.Persona</label>
+                      <!-- <input type="text" class="form-control" placeholder="Username"> -->
+                    </div>
+
+                  </div>
+              <!-- 1er Input -->
+                  <div class="col-lg-8">
+
+                    <div class="input-group mb-3">
+                        <input formControlName = "id" type="text" class="form-control" placeholder="ingresa tu codigo personal">
+                    </div>
+
+                  </div>
+            </div>
+
+            <!-- Nombres  -->
+            <div class="row">
+              <!-- 1era label -->
+                  <div class="col-lg-3">
+
+                    <div class="input-group mb-3">
+                      <label  class="form-control">Nombre : </label>
+                      <!-- <input type="text" class="form-control" placeholder="Username"> -->
+                    </div>
+
+                  </div>
+              <!-- 1er Input -->
+                  <div class="col-lg-8">
+
+                    <div class="input-group mb-3">
+                        <input formControlName = "nombre" type="text" class="form-control" placeholder="Nombre">
+                    </div>
+
+                  </div>
+            </div>
+
+            <!--  Fecha de Nacimiento -->
+            <div class="row">
+              <!-- 1era label -->
+                  <div class="col-lg-3">
+
+                    <div class="input-group mb-3">
+                      <label class="form-control Letra-sm">Fec. Nacimiento</label>
+                      <!-- <input type="text" class="form-control" placeholder="Username"> -->
+                    </div>
+
+                  </div>
+              <!-- 1er Input -->
+                  <div class="col-lg-8">
+
+                    <div class="input-group mb-3">
+                        <input formControlName = "fechaNacimiento" type="date" class="form-control" placeholder="Naciste que dia?">
+                    </div>
+
+                  </div>
+            </div>
+
+            <!-- Sectores  COMBOBOX --- SELECTS -->
+            <div class="row">
+              <!-- 1era label -->
+                  <div class="col-lg-3">
+
+                    <div class="input-group input-group-sm mb-3">
+                      <label for="Name" class="form-control"> Sector</label>
+                      <!-- <input type="text" class="form-control" placeholder="Username"> -->
+                    </div>
+
+                  </div>
+              <!-- 1er Input -->
+                  <div class="col-lg-3">
+
+                    <div class="input-group mb-3">
+
+                      <select  formControlName = "sector" class="form-select form-select-sm ">
+                        <option  value="{{sectores.id}}" *ngFor= "let sectores of listSectores">
+                          {{sectores.des_sector}}
+                        </option>
+                      </select>
+
+                    </div>
+
+                  </div>
+            </div>
+
+                      <!-- Zonas  COMBOBOX --- SELECTS -->
+                      <div class="row">
+
+                        <!-- 1era label -->
+                            <div class="col-lg-3">
+                              <div class="input-group input-group-sm mb-3">
+                                <label for="Name" class="form-control"> Zonas</label>
+                                <!-- <input type="text" class="form-control" placeholder="Username"> -->
+                              </div>
+                            </div>
+
+                        <!-- 1er Input -->
+                            <div class="col-lg-3">
+
+                              <div class="input-group mb-3">
+
+                                <select formControlName = "zona" class="form-select form-select-sm ">
+                                  <option  *ngFor= "let zonas of listZonas" value = {{zonas.id}}>
+                                    {{zonas.des_zona}}
+                                  </option>
+                                  <!-- <option value="1">sector1</option> -->
+
+                                </select>
+
+                              </div>
+
+                            </div>
+                      </div>
+
+                        <!-- /////////////////Sueldos ///////////////////  -->
+                        <div class="row">
+                          <!-- 1era label -->
+                              <div class="col-sm-3">
+
+                                <div class="input-group mb-3">
+                                  <label  class="form-control">Sueldo : </label>
+                                  <!-- <input type="text" class="form-control" placeholder="Username"> -->
+                                </div>
+
+                              </div>
+                          <!-- 1er Input -->
+                              <div class="col-sm-3">
+
+                                <div class="input-group mb-3">
+                                    <input formControlName = "sueldo" type="text" class="form-control" placeholder="Sueldo apercibido">
+                                </div>
+
+                              </div>
+                        </div>
+
+            <!-- botones -->
+
+            <div class="row ">
+
+              <div class="col-10 mx-auto">
+
+                <!-- <button class="btn btn-outline-primary me-md-2" type="button">
+                  Nuevo</button>   (click) = agregarPersona() -->
+
+                <button  type="input" class="btn btn-outline-success me-md-2"><i class="fas fa-save"></i>Grabar</button>
+                <!-- <button type="button" class="btn btn-outline-danger me-md-2">Eliminar</button>
+                <button type="button" class="btn btn-outline-secondary ">Volver</button> -->
+              </div>
+
+            </div>
+
+            <!-- FIN DE FORM -->
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  <!-- </div> -->
+
+</div>
+
+<div class="container mt-2">
+
+  <div class="col-lg-10 offset-sm-1">
+    <div class="card">
+      <div class="card-body">
+          <h3 class="titulo"> Listado de Personas </h3>
+
+          <table class="table">
+            <tbody>
+              <tr *ngFor= "let persona of listPersonas;">
+                <!-- ; let i = index; let i = index -->
+                <td>{{persona.nombre}}</td>
+                <td>{{persona.fec_nacimiento}}</td>
+                <td>{{persona.sectorId}}</td>
+                <td>{{persona.zonaId}}</td>
+                <!-- <td>{{persona.Sueldo}}</td> -->
+                <td><i class="fas fa-edit text-info"></i></td>
+                <td><i (click) = eliminarPersona(persona.id) class="fas fa-trash text-danger"></i></td>
+              </tr>
+            </tbody>
+          </table>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="container mt-2">
+
+  <div class="col-lg-10 offset-sm-1">
+    <div class="card">
+      <div class="card-body">
+          <h3 id=" hidden-yes " class="titulo"> Listado de Sueldos </h3>
+
+          <table id=" hidden-yes" class="table">
+            <tbody>
+              <tr>
+                <!-- ; let i = index; let i = index -->
+                <th>Sector</th>
+                <th>Zone</th>
+                <th>Sueldo</th>
+              </tr>
+            </tbody>
+          </table>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
