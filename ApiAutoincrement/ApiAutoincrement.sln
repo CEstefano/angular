@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiAutoincrement", "ApiAutoincrement\ApiAutoincrement.csproj", "{201804DF-9AB4-4B40-8617-7A0FE2262B7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{201804DF-9AB4-4B40-8617-7A0FE2262B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{201804DF-9AB4-4B40-8617-7A0FE2262B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{201804DF-9AB4-4B40-8617-7A0FE2262B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{201804DF-9AB4-4B40-8617-7A0FE2262B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C99DC696-E282-4B6D-B72F-7F20A6891FF6}
+	EndGlobalSection
+EndGlobal
